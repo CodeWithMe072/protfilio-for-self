@@ -1,0 +1,729 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    scroll-behavior: smooth;
+    transition: .5s;
+}
+
+body {
+    width: 100vw;
+    height: 100%;
+    background: #fff;
+    overflow-x: hidden;
+}
+
+/* ----------------header start------------------- */
+.header {
+    width: 100%;
+    height: 100vh;
+
+}
+
+/* ----------------navbar start------------------- */
+.navbar {
+    width: 100%;
+    background: #ffffffe6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   z-index: 999;
+    flex-wrap: wrap;
+    position: fixed;
+}
+
+.left-part {
+    /* background-color: red; */
+    width: 23%;
+    display: flex;
+    justify-content: center;
+}
+
+.left-part .website-name {
+    font-size: 1.8rem;
+    opacity: 0;
+    animation: slideright 1s ease forwards;
+    color: #0ef;
+
+}
+
+.right-part {
+    /* background-color: black; */
+    width: 60%;
+}
+
+.right-part-ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-right: 2rem;
+}
+
+.right-part-ul-li {
+    list-style: none;
+    padding: 2rem 2rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+
+.right-part-ul-li a::after {
+    content: "";
+    width: 0;
+    height: 3px;
+    background-color: #0ef;
+    position: absolute;
+    left: 0;
+    bottom: -.5rem;
+    transition: 0.5s;
+}
+
+.right-part-ul-li a {
+    text-decoration: none;
+    color: #000;
+    transition: .3s;
+    display: inline-block;
+    opacity: 0;
+    animation: slidetop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+    position: relative;
+}
+
+.right-part-ul li:nth-last-of-type(1) {
+    border: 2px solid #0ef;
+    padding: .6rem 1rem;
+    background-color: #0ef;
+    opacity: 0;
+    cursor: pointer;
+
+    border-radius: 10px;
+    animation: slideright 1s ease forwards;
+    animation-delay: .3s;
+    color: #0ef;
+}
+
+
+.right-part-ul-li a:hover::after,
+.right-part-ul-li a.active::after {
+    color: #0ef;
+    width: 100%
+}
+
+.right-part-ul-li a:hover,
+.right-part-ul-li a.active {
+    color: #0ef;
+}
+
+.right-part-ul li:nth-last-of-type(1):hover {
+    box-shadow: 0 0 10px;
+}
+
+.right-part-ul li:nth-last-of-type(1) a:hover,
+.right-part-ul li:nth-last-of-type(1) a.active {
+    color: #000;
+}
+
+
+/* ----------------navbar end------------------- */
+/* ----------------home start------------------- */
+.header-home {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url(./background.jpg);
+
+    background-size: cover;
+    background-position: center;
+}
+
+.header-home-content {
+    width: 75%;
+    height: 55%;
+}
+
+.header-home-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: .75rem;
+    opacity: 0;
+    animation: slidebottom 1s ease forwards;
+    animation-delay: .7s;
+}
+
+.header-home-content h3:nth-of-type(3) {
+    opacity: 0;
+    animation: slidetop 1s ease forwards;
+    animation-delay: .7s;
+}
+
+.header-home-content h3:nth-of-type(2) {
+    opacity: 0;
+    animation: slideleft 1s ease forwards;
+    animation-delay: .7s;
+}
+
+.header-home-content h3 span {
+    color: #0ef;
+}
+
+.header-home-content h1 {
+    font-size: 4rem;
+    color: #0ef;
+    margin: 1rem 0rem;
+    opacity: 0;
+    animation: slideright 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.header-home-content p {
+    font-size: 1.2rem;
+    width: 55%;
+    text-align: justify;
+    opacity: 0;
+    animation: slideleft 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.header-home-contant-button {
+    display: flex;
+    width: 75%;
+}
+
+.btnanimation {
+    opacity: 0;
+    animation: slideright 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.header-home-contant-button .btn {
+    text-align: center;
+    background-color: #0ef;
+    border-radius: 13px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: .8rem 2rem;
+    /* text-decoration: none; */
+    border: 2px solid #0ef;
+    margin: 0 .7rem 0 0;
+    cursor: pointer;
+
+}
+
+.header-home-contant-button .btn a {
+    text-decoration: none;
+    color: #000000;
+
+}
+
+.header-home-contant-button .btn:hover {
+    box-shadow: 0 0 10px #0ef;
+
+}
+
+
+
+
+/* ---------animation navbar start---------- */
+@keyframes slideright {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+
+}
+
+@keyframes slidetop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+
+}
+
+@keyframes slidetopbtn {
+    0% {
+        transform: translateY(-50px);
+        opacity: 1;
+
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+
+    }
+
+}
+
+/* ---------animation navbar end---------- */
+/* ---------animation home start---------- */
+@keyframes slidebottom {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+
+}
+
+@keyframes slideleft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+
+}
+
+/* ---------animation home end---------- */
+/* --------- about start---------- */
+.about {
+    padding: 2rem 0;
+    color: #000;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.about-container-row {
+    display: flex;
+
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-container {
+    width: 90%;
+}
+
+.about-image {
+    flex-basis: 35%;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.about-text {
+    padding-top: 5rem;
+    flex-basis: 55%;
+}
+
+.about-hedding {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.about-text .para {
+    text-align: justify;
+    /* flex-basis: 80%; */
+    width: 90%;
+}
+
+.about-title {
+    display: flex;
+    margin: 1rem 0 2rem 0;
+}
+
+.about-titile-link {
+    margin-right: 2rem;
+    font-size: 1.4rem;
+    cursor: pointer;
+    position: relative;
+    font-weight: 500;
+}
+
+.about-titile-link::after {
+    content: "";
+    width: 0;
+    height: 3px;
+    background-color: #0ef;
+    position: absolute;
+    left: 0;
+    bottom: -.5rem;
+    transition: 0.5s;
+}
+
+.about-titile-link:hover::after {
+    width: 50%;
+}
+
+.about-titile-link.active-link::after {
+    width: 50%;
+}
+
+.about-title-content ul li {
+    list-style: none;
+    margin: 1rem 0;
+}
+
+.about-title-content ul li span {
+    color: rgb(45, 238, 252);
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.about-title-content {
+    display: none;
+}
+
+.about-title-content.active-content {
+    display: block;
+}
+
+/* --------- about end---------- */
+/* --------- skils section start--------- */
+.my-skils {
+    width: 100vw;
+    padding: 3rem 0;
+}
+
+.my-skils .my-skils-heading .sub-title {
+    text-align: center;
+    font-size: 3rem;
+    padding-bottom: 4rem;
+
+}
+
+.my-skils-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+/* ---------------------my-skild-container1 start---------------------------------- */
+.my-skild-container1 {
+    width: 50%;
+    /* background-color: red; */
+    height: 80%;
+    padding-left: 8rem;
+    padding-right: 8rem;
+    margin-left: 2rem;
+    /* padding-top: 4rem; */
+}
+
+.my-skild-container1 .secondary-heading {
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    text-decoration-thickness: 5px;
+    margin-bottom: 1rem;
+}
+
+.techincal-bars .bar {
+    font-size: 1.6rem;
+    margin: 1rem 0;
+}
+
+.techincal-bars .bar:first-child {
+    margin-top: 0;
+}
+
+.techincal-bars .bar:last-child {
+    margin-bottom: 0;
+}
+
+.techincal-bars .bar .info {
+    margin-bottom: .5rem;
+}
+
+.techincal-bars .bar .info span {
+    font-size: 17px;
+    font-weight: 500;
+    animation: showText 0.5s 1s linear forwards;
+}
+
+.techincal-bars .bar .progress-line {
+    position: relative;
+    border-radius: 10px;
+    width: 100%;
+    background-color: #000;
+    height: 5px;
+    animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+@keyframes animate {
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+.techincal-bars .bar .progress-line span {
+    position: absolute;
+    height: 100%;
+    background-color: #0ef;
+    border-radius: 10px;
+    animation: animate  1s cubic-bezier(1, 0, 0.3, 1) forwards;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.techincal-bars .bar .progress-line.html span {
+    width: 90%;
+}
+
+.techincal-bars .bar .progress-line.Css span {
+    width: 80%;
+}
+
+.techincal-bars .bar .progress-line.Javascript span {
+    width: 60%;
+}
+
+.techincal-bars .bar .progress-line.python span {
+    width: 70%;
+}
+
+.techincal-bars .bar .progress-line.java span {
+    width: 60%;
+}
+
+.techincal-bars .bar .progress-line span::after {
+    position: absolute;
+    padding: 1px 8px;
+    background-color: #000;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 3px;
+    top: -28px;
+    right: -20px;
+    animation: showText 0.5s 1.5s linear forwards;
+    opacity: 0;
+}
+.techincal-bars .bar .progress-line.html span::after {
+    content: "90%";
+}
+
+.techincal-bars .bar .progress-line.Css span::after {
+    content: "80%";
+}
+
+.techincal-bars .bar .progress-line.Javascript span::after {
+    content: "60%";
+}
+
+.techincal-bars .bar .progress-line.python span::after {
+    content: "70%";
+}
+
+.techincal-bars .bar .progress-line.java span::after {
+    content: "60%";
+}
+.techincal-bars .bar .progress-line span::before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 7px solid transparent;
+    border-bottom-width: 0;
+    border-right-width: 0;
+    border-top-color: #0ef;
+    animation: showText 0.5s 1.5s linear forwards;
+    opacity: 0;
+}
+@keyframes showText{
+    100%{
+        opacity: 1;
+    }
+}
+/* ---------------------my-skild-container1 end---------------------------------- */
+
+/* ---------------------my-skild-container1 start---------------------------------- */
+.my-skild-container2{
+    width: 40%;
+    /* background-color: red; */
+    height: 80%;
+}
+.my-skild-container2 .secondary-heading {
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    text-decoration-thickness: 5px;
+    margin-bottom: 3rem;
+}
+.radial-bars{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+.radial-bars .radial-bar{
+    width: 50%;
+    margin-bottom: 10px;
+    position: relative;
+    height: 170px;
+   
+}
+.radial-bars .radial-bar svg{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%) rotate(-90deg);
+   width: 120px;
+   height: 160px;
+}
+.radial-bars .radial-bar .progress-bar{
+   stroke-width: 10;
+   stroke: #000000;
+   fill: transparent;
+   stroke-dasharray: 502;
+   stroke-dashoffset: 502;
+   stroke-linecap: round;
+   animation: animate-bar 1s linear forwards;
+}
+@keyframes animate-bar{
+    100%{
+        stroke-dasharray: -1;
+    }
+}
+.radial-bars .radial-bar .path{
+    stroke-width: 10;
+    stroke: #0ef;
+    fill: transparent;
+    stroke-dasharray: 502;
+     stroke-dashoffset: 502;
+    stroke-linecap: round;
+}
+.radial-bars .radial-bar .path-1{
+    animation: animate-path1 1s 1s linear forwards;
+}
+.radial-bars .radial-bar .path-2{
+    animation: animate-path1 1s 1s linear forwards;
+}
+.radial-bars .radial-bar .path-3{
+    animation: animate-path1 1s 1s linear forwards;
+}
+.radial-bars .radial-bar .path-4{
+    animation: animate-path1 1s 1s linear forwards;
+}
+@keyframes animate-path1{
+    100%{
+        stroke-dashoffset: 50;
+    }
+}
+@keyframes animate-path1{
+    100%{
+        stroke-dashoffset: 175;
+    }
+}
+@keyframes animate-path1{
+    100%{
+        stroke-dashoffset: 125;
+    }
+}
+@keyframes animate-path1{
+    100%{
+        stroke-dashoffset: 75;
+    }
+}
+.radial-bars .radial-bar .precentage{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 17px;
+    font-weight: 500;
+    animation: showText 0.5s 1.5s linear forwards;
+    opacity: 0;
+}
+.radial-bars .radial-bar .text{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%);
+    font-size: 17px;
+    font-weight: 500;
+    animation: showText 0.5s 1.5s linear forwards;
+    opacity: 0;
+}
+
+/* ---------------------my-skild-container1 end---------------------------------- */
+
+
+/* ---------services section start---------- */
+.my-services{
+    width: 100vw;
+    padding: 5rem 0;
+    /* padding-top: ; */
+    display: flex;
+    justify-content: center;
+    
+}
+.my-services .my-services-content{
+    width: 80%;
+    text-align: center;
+}
+.my-services .my-services-content .sub-title{
+    text-align: center;
+    font-size: 3rem;
+    padding-bottom: 3rem;
+}
+.my-services .my-services-content .my-services-wrapper{
+    display: grid;
+    margin: 0rem 0rem auto;
+    grid-gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.my-services .my-services-content .my-services-wrapper .wrapper-box{
+    width: 100%;
+    margin: 30px auto;
+   /* background-color: #c1c1c1; */
+   /* box-shadow:  inset -20px -20px 60px #000; */
+}
+ .my-services-wrapper .wrapper-box .box-front-face{
+    background-color: #f6f4f4;
+   height: 130%;
+   width: 100%;
+   display: flex;
+   /* box-shadow:0 0 #fff ,inset 0 0 -10px   -10px 30px red; */
+   flex-direction: column;
+   justify-content: center;
+}
+ .my-services-wrapper .wrapper-box .box-front-face .front-face-icon{
+    height: 35%;
+}
+.box-front-face .front-face-icon i{
+    font-size: 4rem;
+}
+.box-front-face  span{
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.box-front-face .front-face-icon i,
+.box-front-face  span{
+    background: linear-gradient(-135deg, #c850c0, #4158d0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color:transparent ;
+}
+
+
+
+
+
+
+/* ---------services section start---------- */
